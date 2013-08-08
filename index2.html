@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<!--Built by Charlie Weems (@charlieweems) using Twitter Bootstrap, infinite scroll by Paul Irish, Timeline by Verite, and isotope.js by Desandro-->
+    <title>KDMD | The Knowledge Driven Microenterprise Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="js/resond.js">
+    <link href="http://fonts.googleapis.com/css?family=Quicksand:300,400,700|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"></script>
+	<script>window.jQuery || document.write("<script src='jquery-1.6.1.js'>\x3C/script>")</script>
+    
+  </head>
+  <body>
+  <div class="container">
+  	<div id="content">
+  	<body>
+
+<div id="content">
+<h1 class="col-lg-12">The Evolution of KDMD</h1>
+    <h2 class="col-lg-12">On the KDMD project, we know that knowledge management isn't a static set of best practices: it's an evolving ecosystem that requires continuous focus. That's why as our project has grown, we have adapted to support the individual needs multiple buy-ins while also maintaining similar features across all of out sites. This is dummy text btw, so don't take it seriously.</h2>
+    
+    <iframe class="col-lg-12" src='http://embed.verite.co/timeline/?source=0Aocy56ezsv3EdFVuZUU1MlJLcERBSUhzZXh2ZjhxRFE&usp=Bevan-PotanoSans&maptype=toner&width=100%&height=400' width='100%' height='400' frameborder='0'></iframe>
+		
+<a data-toggle="modal" href="#myModal" class="col-lg-4">
+	<div>
+            <div class="highlight">
+                <img class="highlight-image" src="images/stacey.png">
+
+                <div class="cover">
+                    <div class="inner-wrapper">
+                        <div class="all-caps">
+                            USAID's Stacey Young discusses
+                        </div>
+
+                        <div class="big-title">
+                            Why KDMD Was Created
+                        </div>
+
+                        <div class="small-title">
+                            Watch the video now &rsaquo;
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</a>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Stacey's Video</h4>
+        </div>
+        <div class="modal-body">
+          <iframe width="100%" height="315" src="http://www.youtube.com/embed/Tekc3rL4G28"></iframe>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  
+<a data-toggle="modal" href="#graphModal" class="col-lg-4">
+	<div>
+            <div class="highlight">
+                <img class="highlight-image" src="images/team.png">
+
+                <div class="cover">
+                    <div class="inner-wrapper">
+                        <div class="all-caps">
+                            See how our staff has grown
+                        </div>
+
+                        <div class="big-title">
+                            Our Staff Levels by Quarter
+                        </div>
+
+                        <div class="small-title">
+                            Explore the graph &rsaquo;
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</a>
+
+<!-- Modal -->
+  <div class="modal fade" id="graphModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Stacey's Video</h4>
+        </div>
+        <div class="modal-body">
+          <p>Graph Here</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  
+  <div class="col-lg-4">
+<div class="list-head">Top Partners</div>
+	<ol>
+			<li>Engility</li>
+			<li>Zaloni</li>
+			<li>Obama</li>
+			<li>Hillary</li>
+	</ol>
+</div>
+</div>
+<a type="button" id="next" href="index3.html">next page?</a>
+ 
+  	</div>
+  
+  </div><!-- Container -->
+
+    <!-- JavaScript plugins (requires jQuery) -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+    <script src="js/respond.js"></script>
+    
+    <script src="js/jquery.infinitescroll.js"></script>
+    
+    <script>
+	
+	
+	$('div#content').infinitescroll({
+		navSelector  	: "#next:last",
+		nextSelector 	: "a#next:last",
+		itemSelector 	: "#content",
+		debug		 	: false,
+		dataType	 	: 'html',
+		loadingImg		: 'images/loading.gif',
+        maxPage         : 4,
+//		prefill			: true,
+//		path: ["http://nuvique/infinite-scroll/test/index", ".html"]
+		path: function(index) {
+			return "index" + index + ".html";
+		}
+		// behavior		: 'twitter',
+		// appendCallback	: false, // USE FOR PREPENDING
+		// pathParse     	: function( pathStr, nextPage ){ return pathStr.replace('2', nextPage ); }
+    }, function(newElements, data, url){
+    	//USE FOR PREPENDING
+    	// $(newElements).css('background-color','#ffef00');
+    	// $(this).prepend(newElements);
+    	//
+    	//END OF PREPENDING
+
+//    	window.console && console.log('context: ',this);
+//    	window.console && console.log('returned: ', newElements);
+    	
+    });
+	</script>
+  </body>
+</html>
