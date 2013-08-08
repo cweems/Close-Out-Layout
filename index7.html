@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<!--Built by Charlie Weems (@charlieweems) using Twitter Bootstrap, infinite scroll by Paul Irish, Timeline by Verite, and isotope.js by Desandro-->
+    <title>KDMD | The Knowledge Driven Microenterprise Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="js/resond.js">
+    <link href="http://fonts.googleapis.com/css?family=Quicksand:300,400,700|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"></script>
+	<script>window.jQuery || document.write("<script src='jquery-1.6.1.js'>\x3C/script>")</script>
+    
+  </head>
+  <body>
+  <div class="container">
+  	<div id="content">
+ 	<h1 class="col-lg-12">Expanding the KM Reach</h1>
+ 	<h2 class="col-lg-12">
+  	On the KDMD project, we know that knowledge management isn't a static set of best practices: it's an evolving ecosystem that requires continuous focus. That's why as our project has grown, we have adapted to support the individual needs multiple buy-ins while also maintaining similar features across all of out sites. This is dummy text btw, so don't take it seriously.
+  	</h2>
+  	
+  	
+
+<div class="col-lg-4 height1">
+	<div>
+            <div class="height1">
+            
+            <script type="text/javascript" src="js/chart.js"> {"dataSourceUrl":"//docs.google.com/spreadsheet/tq?key=0Ams9BGDIFKZfdFhrZjVDQ0didFFrVnpydkJ6MDFaZmc&transpose=1&headers=1&range=A1%3AF14&gid=0&pub=1","options":{"titleTextStyle":{"bold":false,"color":"#000","fontSize":16},"vAxes":[{"useFormatFromData":true,"title":"Year","minValue":null,"viewWindowMode":null,"viewWindow":null,"maxValue":null},{"useFormatFromData":true}],"series":{"3":{"color":"#6d9eeb"},"2":{"color":"#3c78d8"},"10":{"color":"#6fa8dc"},"1":{"color":"#3366cc"},"0":{"color":"#1c4587"},"7":{"color":"#0b5394"},"6":{"color":"#073763"},"5":{"color":"#c9daf8"},"4":{"color":"#a4c2f4"},"8":{"color":"#3d85c6"},"11":{"color":"#9fc5e8"},"12":{"color":"#cfe2f3"}},"booleanRole":"certainty","title":"Growth of Our Funding Over Time","height":250,"animation":{"duration":0},"legend":"right","width":350,"useFirstColumnAsDomain":true,"hAxis":{"useFormatFromData":true,"title":"Amount","minValue":null,"logScale":false,"viewWindow":{"min":null,"max":null},"maxValue":null},"isStacked":true},"state":{},"view":{"columns":[{"calc":"stringify","type":"string","sourceColumn":0},1,2,3,4,5,6,7,8,9,10,11,12,13]},"isDefaultVisualization":true,"chartType":"BarChart","chartName":"Chart 1"} </script>
+
+            </div>
+	</div>
+</div>
+               
+
+<div class="col-lg-4 height1">
+	<div class="height1">
+        <div class="height1">
+	         <div class="height1">
+	           
+	            	<img class="col-lg-12 fig" style="margin-top:0px;" src="images/stars.png">
+	            	<h2 class="col-lg-8">Average rating our seminars received from participants.</h2>
+	           
+            	</div>
+        </div>  
+    </div>
+</div>
+
+<div class="col-lg-4 height1">
+	<div class="height1">
+            	<div class="height1">
+	           
+	            	<h1 class="col-lg-12 fig" style="margin-top:0px;">15k</h1>
+	            	<h2 class="col-lg-12">Number of people trained by ALT.</h2>
+	           
+            	</div>
+               
+    </div>
+</div>
+
+
+  	
+<div class="col-lg-12 height2">
+<div class="height2">
+<iframe width="100%" height="700" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/ms?msa=0&amp;msid=217921034404461214091.0004dd3b4241fc2c2cb42&amp;hl=en&amp;ie=UTF8&amp;t=m&amp;ll=38.903366,-77.046872&amp;spn=0.006563,0.013153&amp;output=embed"></iframe>
+</div>
+</div>
+
+
+</div>
+</div>
+
+<!-- <a type="button" id="next" href="index4.html">next page?</a> -->
+ 
+  
+  </div> <!-- Container -->
+
+    <!-- JavaScript plugins (requires jQuery) -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+    <script src="js/respond.js"></script>
+    
+    <script src="js/jquery.infinitescroll.js"></script>
+    
+    <script>
+	
+	
+	$('div#content').infinitescroll({
+		navSelector  	: "#next:last",
+		nextSelector 	: "a#next:last",
+		itemSelector 	: "#content",
+		debug		 	: false,
+		dataType	 	: 'html',
+		loadingImg		: 'images/loading.gif',
+        maxPage         : 4,
+//		prefill			: true,
+//		path: ["http://nuvique/infinite-scroll/test/index", ".html"]
+		path: function(index) {
+			return "index" + index + ".html";
+		}
+		// behavior		: 'twitter',
+		// appendCallback	: false, // USE FOR PREPENDING
+		// pathParse     	: function( pathStr, nextPage ){ return pathStr.replace('2', nextPage ); }
+    }, function(newElements, data, url){
+    	//USE FOR PREPENDING
+    	// $(newElements).css('background-color','#ffef00');
+    	// $(this).prepend(newElements);
+    	//
+    	//END OF PREPENDING
+
+//    	window.console && console.log('context: ',this);
+//    	window.console && console.log('returned: ', newElements);
+    	
+    });
+	</script>
+  </body>
+</html>
