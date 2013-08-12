@@ -16,10 +16,9 @@
   <body>
   <div class="container">
   	<div id="content">
-  	<body>
 
 <div id="content">
-<h1 class="col-lg-12">The Evolution of KDMD</h1>
+<h1 class="col-lg-12" id="theEvolutionOfKDMD">The Evolution of KDMD</h1>
     <h2 class="col-lg-12">On the KDMD project, we know that knowledge management isn't a static set of best practices: it's an evolving ecosystem that requires continuous focus. That's why as our project has grown, we have adapted to support the individual needs multiple buy-ins while also maintaining similar features across all of out sites. This is dummy text btw, so don't take it seriously.</h2>
     
     <iframe class="col-lg-12" src='http://embed.verite.co/timeline/?source=0Aocy56ezsv3EdFVuZUU1MlJLcERBSUhzZXh2ZjhxRFE&usp=Bevan-PotanoSans&maptype=toner&width=100%&height=400' width='100%' height='400' frameborder='0'></iframe>
@@ -118,7 +117,6 @@
 	</ol>
 </div>
 </div>
-<a type="button" id="next" href="index3.html">next page?</a>
  
   	</div>
   
@@ -132,38 +130,5 @@
     <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
     <script src="js/respond.js"></script>
     
-    <script src="js/jquery.infinitescroll.js"></script>
-    
-    <script>
-	
-	
-	$('div#content').infinitescroll({
-		navSelector  	: "#next:last",
-		nextSelector 	: "a#next:last",
-		itemSelector 	: "#content",
-		debug		 	: false,
-		dataType	 	: 'html',
-		loadingImg		: 'images/loading.gif',
-        maxPage         : 4,
-//		prefill			: true,
-//		path: ["http://nuvique/infinite-scroll/test/index", ".html"]
-		path: function(index) {
-			return "index" + index + ".html";
-		}
-		// behavior		: 'twitter',
-		// appendCallback	: false, // USE FOR PREPENDING
-		// pathParse     	: function( pathStr, nextPage ){ return pathStr.replace('2', nextPage ); }
-    }, function(newElements, data, url){
-    	//USE FOR PREPENDING
-    	// $(newElements).css('background-color','#ffef00');
-    	// $(this).prepend(newElements);
-    	//
-    	//END OF PREPENDING
-
-//    	window.console && console.log('context: ',this);
-//    	window.console && console.log('returned: ', newElements);
-    	
-    });
-	</script>
   </body>
 </html>

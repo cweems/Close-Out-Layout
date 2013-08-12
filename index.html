@@ -7,22 +7,51 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet" media="screen">
     <link href="css/style.css" rel="stylesheet">
-    <link href="js/resond.js">
     <link href="http://fonts.googleapis.com/css?family=Quicksand:300,400,700|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"></script>
-	<script>window.jQuery || document.write("<script src='jquery-1.6.1.js'>\x3C/script>")</script>
+	<script>window.jQuery || document.write("<script src='js/jquery-1.6.1.js'>\x3C/script>")</script>
     
   </head>
   <body>
+  <div class="portfolioFilter">
+    <div id="site-title">KDMD</div>
+    <h2 id="site-subtitle">The Knowledge Driven<br>
+Microenterprise<br>Development<br>
+Project</h2>
+ 
+    <a href="#letterFromTheTeam" data-filter=".welcome" class="current">Letter From the Team</a>
+    <br>
+    <a href="#theEvolutionOfKDMD" data-filter=".evolution">Evolution of KDMD</a>
+    <br>
+    <a href="#ourKMApproach" data-filter=".partners">Our KM Approach</a>
+    <br>
+    <a href="#ourUSAIDPartners" data-filter=".products">Our USAID Partners</a>
+    <br>
+    <a href="#buildingCommunities" data-filter=".trainings">Our Reach</a>
+    <br>
+    <a href="#expandingTheKMReach" data-filter=".web-dev">Building Communities</a>
+    <br>
+    <a href="#ourImpact" data-filter=".me">Lessons Learned</a>
+    <br>
+    <a href="#ourTeam" data-filter=".online-reach">Our Impact</a>
+    <br>
+    <a href="#" data-filter=".ct">Contact</a>
+    
+    <div class="branding">
+    	<p id="imp">Implemented by:</p>
+    	<img src="images/qed-white.png">
+    </div>
+</div>
+
   <div class="container">
   	<div id="content">
-  	<h1 class="col-lg-12">Letter from the Team</h1>
+  	<h1 class="col-lg-12" id="letterFromTheTeam">Letter from the Team</h1>
   	<h2 class="col-lg-12">"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.<br><br> Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."<br><br>
   	"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.<br><br> Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."</h2>
   	<nav id="page-nav">
-  	<a type="button" id="next" href="index2.html">next page?</a>
+  	<a type="button" id="next" href="index2.html"></a>
   	</nav>
-  	</div>
+  	</div
  
   
   
@@ -38,37 +67,41 @@
     
     
     <script src="js/jquery.infinitescroll.js"></script>
+    <script src="js/jquery.masonry.min.js"></script> 
     
-    <script>
-	
-	
-	$('div#content').infinitescroll({
-		navSelector  	: "#next:last",
-		nextSelector 	: "a#next:last",
-		itemSelector 	: "#content",
-		debug		 	: false,
-		dataType	 	: 'html',
-		loadingImg		: 'images/loading.gif',
-        maxPage         : 4,
-//		prefill			: true,
-//		path: ["http://nuvique/infinite-scroll/test/index", ".html"]
-		path: function(index) {
-			return "index" + index + ".html";
-		}
-		// behavior		: 'twitter',
-		// appendCallback	: false, // USE FOR PREPENDING
-		// pathParse     	: function( pathStr, nextPage ){ return pathStr.replace('2', nextPage ); }
-    }, function(newElements, data, url){
-    	//USE FOR PREPENDING
-    	// $(newElements).css('background-color','#ffef00');
-    	// $(this).prepend(newElements);
-    	//
-    	//END OF PREPENDING
-
-//    	window.console && console.log('context: ',this);
-//    	window.console && console.log('returned: ', newElements);
-    	
+    <script> 
+  $(function(){
+    
+    var $container = $('.container');
+    
+    $container.imagesLoaded(function(){
+      $container.masonry({
+        itemSelector: '#content',
+        columnWidth: 100
+      });
     });
-	</script>
+    
+    $container.infinitescroll({
+      navSelector  : '#page-nav',    // selector for the paged navigation 
+      nextSelector : '#next',  // selector for the NEXT link (to page 2)
+      debug			: true,
+      itemSelector : '#content',     // selector for all items you'll retrieve
+      loading: {
+          finishedMsg: 'もう無いよ',
+          img: 'http://i.imgur.com/6RMhx.gif'
+        }
+      },
+      // trigger Masonry as a callback
+      function( newElements ) {
+        var $newElems = $( newElements );
+        // ensure that images load before adding to masonry layout
+        $newElems.imagesLoaded(function(){
+          $container.masonry( 'appended', $newElems, true ); 
+        });
+      }
+    );
+    
+  });
+</script> 
   </body>
 </html>
